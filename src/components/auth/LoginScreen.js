@@ -1,10 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useForm } from '../../hooks/useForm'
+import { useDispatch } from 'react-redux'
+import { startGoogleLogin } from '../../actions/auth'
 
 export const LoginScreen = () => {
 
-
+  const dispatch = useDispatch()
 
   const [ values, handleInputChange ] = useForm()
 
@@ -18,6 +20,7 @@ export const LoginScreen = () => {
 
   const handleGoogleLogin = () =>{
     console.log('registrado con google')
+    dispatch(startGoogleLogin())
 
   }
 
