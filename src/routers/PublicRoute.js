@@ -3,8 +3,7 @@ import { useSelector } from "react-redux"
 
 
 export const PublicRoute = ({children}) => {
-
-  const { uid } =  useSelector(state => state.auth)
+  const { uid } =  useSelector(state => state.auth);
 
 
   return !uid

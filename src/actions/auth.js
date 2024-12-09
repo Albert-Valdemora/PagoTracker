@@ -66,13 +66,15 @@ export const startLoginEmailPassword = (email, password) => {
 }
 
 
-export const login = (uid, displayName) => ({
-  type: types.login,
-  payload: {
-    uid,
-    displayName
+export const login = (uid, displayName) => {
+  return {
+    type: types.login,
+    payload: {
+      uid,
+      displayName
+    }
   }
-})
+}
 
 export const startLogout = () => {
   return async (dispatch) => {
@@ -82,6 +84,9 @@ export const startLogout = () => {
   }
 }
 
-export const logout = () => ({
-  type: types.logout
-})
+export const logout = () => {
+  return {
+    type: types.logout
+  }
+
+}
