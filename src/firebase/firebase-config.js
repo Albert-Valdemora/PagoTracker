@@ -2,13 +2,14 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDQ06K7Rd5fcpBFJExQ11QuBP-9lX0aV3Q",
-  authDomain: "react-app-curso-db077.firebaseapp.com",
-  projectId: "react-app-curso-db077",
-  storageBucket: "react-app-curso-db077.appspot.com",
-  messagingSenderId: "584805944913",
-  appId: "1:584805944913:web:8f0c6e5b0ee22166a73270"
+  apiKey: "AIzaSyD4y5LrJB3PdDLgG7l5TSvh3XntgKtwwLI",
+  authDomain: "pago-tracker.firebaseapp.com",
+  projectId: "pago-tracker",
+  storageBucket: "pago-tracker.firebasestorage.app",
+  messagingSenderId: "1094182766029",
+  appId: "1:1094182766029:web:4c443bc4707f227d38b084"
 };
 
 const app = initializeApp(firebaseConfig);
