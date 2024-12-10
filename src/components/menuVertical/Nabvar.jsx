@@ -23,7 +23,7 @@ export const Nabvar = ({li}) => {
             <img
               src={item[1]}
               alt={item[1]}
-              style={{ paddingLeft: nabvarV === false ? 27 : 17 }}
+              style={{ paddingLeft: nabvarV === false ? 27 : 17, width: nabvarV === true ?'35px' : '43px'}}
             />
             <li
               className="navbar__li"

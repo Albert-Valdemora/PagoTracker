@@ -45,10 +45,7 @@ $borderLeftColor:#58b5fc;
   transition: all 0.1s ease;
 }
 
-.navbar__li-box img{
-  width: 20px;
-  height: auto;
-}
+
 .navbar__li-box:hover {
   border-left: 7px solid $borderLeftColor;
   cursor: pointer;
