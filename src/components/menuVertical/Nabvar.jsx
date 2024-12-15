@@ -15,16 +15,12 @@ export const Nabvar = ({li}) => {
   return (
     <nav className="navbar-menu" style={{ width: nabvarV === false ? 250 : 60 }}>
       <div className="burger" onClick={() => openClose()}>
-        <img src="img/bars-solid.svg"  style={{width: '30px', margin: nabvarV ?'0 auto' :'0' }} alt="burger" />
+      <i class="fa-solid fa-bars"  style={{fontSize: '28px', margin: nabvarV ?'0 auto' :'0' }}></i>
       </div>
       <ul className="navbar__list">
         {li.map((item, i) => (
-          <div className="navbar__li-box" key={i}>
-            <img
-              src={item[1]}
-              alt={item[1]}
-              style={{ paddingLeft: nabvarV === false ? 27 : 17, width: nabvarV === true ?'35px' : '43px'}}
-            />
+          <div className="navbar__li-box flex items-center gap-3" key={i}>
+            <i class={item[1]} style={{ paddingLeft: nabvarV === false ? 27 : 17, width: nabvarV === true ?'35px' : '43px'}}></i>
             <li
               className="navbar__li"
               style={{ display: nabvarV === false ? "inline-block" : "none" }}

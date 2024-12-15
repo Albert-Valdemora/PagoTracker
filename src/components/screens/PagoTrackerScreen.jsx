@@ -19,10 +19,10 @@ export const PagoTrackerScreen = () => {
       <header>
         <Nabvar
           li={[
-            ["Dashboard", "img/user-plus-solid.svg"],
-            ["Restautant’s", "img/calendar-days-solid.svg"],
-            ["Manage User’s", "img/clipboard-regular.svg"],
-            ["Manage Order’s", "img/notes-medical-solid.svg"],
+            ["Dashboard", "fa-solid fa-user-plus"],
+            ["Restautant’s", "fa-solid fa-envelope"],
+            ["Manage User’s", "fa-solid fa-book"],
+            ["Manage Order’s", "fa-solid fa-gear"],
           ]}
         />
       </header>
