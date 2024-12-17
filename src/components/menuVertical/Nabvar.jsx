@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 export const Nabvar = ({li}) => {
 
@@ -14,8 +14,8 @@ export const Nabvar = ({li}) => {
 
   return (
     <nav className="navbar-menu" style={{ width: nabvarV === false ? 250 : 60 }}>
-      <div className="burger" onClick={() => openClose()}>
-      <i class="fa-solid fa-bars"  style={{fontSize: '28px', margin: nabvarV ?'0 auto' :'0' }}></i>
+       <div className="burger" onClick={() => openClose()}>
+         <i class="fa-solid fa-bars"  style={{fontSize: '28px', margin: nabvarV ?'0 auto' :'0' }}></i>
       </div>
       <ul className="navbar__list">
         {li.map((item, i) => (
@@ -30,6 +30,7 @@ export const Nabvar = ({li}) => {
           </div>
         ))}
       </ul>
+   
     </nav>
   )
 }

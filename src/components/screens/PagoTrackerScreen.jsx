@@ -1,21 +1,14 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { startLogout } from "../../actions/auth";
 import { Nabvar } from "../menuVertical/Nabvar";
 import { NabvarH } from "../menuHorizotal/NabvarH";
-import {useTheme} from "@nextui-org/use-theme";
+import { CardEstilizada } from "../Card/CardEstilizada";
+import { DarkModeToggle } from "../botton/DarkModeToggle";
 
 export const PagoTrackerScreen = () => {
 
-  const { theme, setTheme } = useTheme()
-  const dispatch = useDispatch();
-
-  const handleLogout = () => {
-    dispatch(startLogout());
-  };
-
   return (
     <div className="app-container" style={{ display: "flex", gap: "" }}>
+
       <header>
         <Nabvar
           li={[
@@ -27,18 +20,29 @@ export const PagoTrackerScreen = () => {
         />
       </header>
 
-      <main>
+      <main >
         <NabvarH />
-        <button className="btn btn-primary mt-5" onClick={handleLogout}>
-          Logout
-        </button>
 
-        <div className="flex gap-4">
-          The current theme is: {theme}
-          <button onClick={() => setTheme("light")}>Light Mode</button>
-          <button onClick={() => setTheme("dark")}>Dark Mode</button>
+      <section className="app-section-container">
+       
+       <h1 className="text-2xl my-5">Dashboard</h1>
+
+        <div className="app-container-card">
+        <CardEstilizada info={[
+          ["Cantida de consulta", "200", "0.43%"],
+          ["Nuevos Odontologos por mes", "1340", "4.43%"],
+          ["Nuevos Odontologos por mes", "1340", "4.43%"],
+          ["Nuevas citas", "200", "2.59%"]
+        ]}/>
         </div>
+      </section>
+
       </main>
+
+      <div className="absolute bottom-3 right-3">
+      <DarkModeToggle  />
+      </div>
+       
     </div>
   );
 };

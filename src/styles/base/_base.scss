@@ -22,6 +22,22 @@ html, body{
 
 main{
   width: 100%;
+  position: relative;
+
+}
+.app-section-container{
+  width: 95%;
+  position: absolute;
+  top: 110px;
+  left: 45px;
+}
+
+.app-container-card{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 .mt-1{
