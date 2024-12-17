@@ -1,6 +1,6 @@
 import { types } from "../types/types"
 import { auth, googleAuthProvider } from "../firebase/firebase-config";
-import { signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { browserLocalPersistence, setPersistence, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { updateProfile } from "firebase/auth";
 import { finishLoading, startLoading } from "./ui";
@@ -12,16 +12,17 @@ import Swal from 'sweetalert2'
 
 export const startGoogleLogin = () => {
   return (dispatch) => {
-
-    signInWithPopup(auth, googleAuthProvider)
+    setPersistence(auth, browserLocalPersistence)
+      .then(() => {
+        return signInWithPopup(auth, googleAuthProvider);
+      })
       .then(({ user }) => {
-        dispatch(login(user.uid, user.displayName))
+        dispatch(login(user.uid, user.displayName, user.photoURL, user.email));
       })
       .catch((error) => {
         console.error("Error al iniciar sesión con Google:", error);
       });
-
-  }
+  };
 }
 
 
@@ -31,7 +32,7 @@ export const startRegisterWithEmailPasswordName = (email, password, name) => {
       .then(async ({ user }) => {
 
         await updateProfile(user, { displayName: name });
-        dispatch(login(user.uid, user.displayName))
+        dispatch(login(user.uid, user.displayName, user.photoURL, user.email))
 
 
       })
@@ -51,7 +52,7 @@ export const startLoginEmailPassword = (email, password) => {
     signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
 
-        dispatch(login(user.uid, user.displayName))
+        dispatch(login(user.uid, user.displayName, user.photoURL, user.email))
         dispatch(finishLoading())
 
       })
@@ -66,12 +67,14 @@ export const startLoginEmailPassword = (email, password) => {
 }
 
 
-export const login = (uid, displayName) => {
+export const login = (uid, displayName, photoURL, email) => {
   return {
     type: types.login,
     payload: {
       uid,
-      displayName
+      displayName,
+      photoURL,
+      email,
     }
   }
 }
