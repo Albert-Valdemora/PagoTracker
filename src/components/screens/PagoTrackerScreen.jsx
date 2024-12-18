@@ -2,7 +2,8 @@ import React from "react";
 import { Nabvar } from "../menuVertical/Nabvar";
 import { NabvarH } from "../menuHorizotal/NabvarH";
 import { CardEstilizada } from "../Card/CardEstilizada";
-import { DarkModeToggle } from "../botton/DarkModeToggle";
+import { TotalCliente } from "../graficos/TotalCliente";
+import TablaCliente from "../tabla/TablaCliente";
 
 export const PagoTrackerScreen = () => {
 
@@ -25,7 +26,7 @@ export const PagoTrackerScreen = () => {
 
       <section className="app-section-container">
        
-       <h1 className="text-2xl my-5">Dashboard</h1>
+       <h1 className="text-3xl my-5 font-bold">Dashboard</h1>
 
         <div className="app-container-card">
         <CardEstilizada info={[
@@ -37,11 +38,25 @@ export const PagoTrackerScreen = () => {
         </div>
       </section>
 
-      </main>
 
-      <div className="absolute bottom-3 right-3">
-      <DarkModeToggle  />
-      </div>
+      <section className="app-section-container mt-[70px]">
+       
+       {/* <h1 className="text-3xl my-5 font-bold">Graficas</h1> */}
+
+        <TotalCliente />
+      </section>
+
+
+      {/* <section className="app-section-container mt-[120px] custom-shadow rounded-lg p-5"> */}
+      <section className="app-section-container mt-[120px]">
+       
+        {/* <h1 className="text-3xl my-5 font-bold">Tablas</h1> */}
+
+
+        <TablaCliente />
+      </section>
+
+      </main>
        
     </div>
   );

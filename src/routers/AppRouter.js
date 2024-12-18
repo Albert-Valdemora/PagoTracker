@@ -8,6 +8,7 @@ import { PrivateRoute } from "./PrivateRoute";
 import { PublicRoute } from "./PublicRoute";
 import { auth } from "../firebase/firebase-config";
 import { login } from "../actions/auth";
+import { DashboardRoutes } from "./DashboardRoutes";
 
 export const AppRouter = () => {
   const dispatch = useDispatch();
@@ -36,6 +37,7 @@ export const AppRouter = () => {
           path="/"
           element={
             <PrivateRoute>
+              {/* <DashboardRoutes /> */}
               <PagoTrackerScreen />
             </PrivateRoute>
           }

@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
 import { login, startLogout } from "../../actions/auth";
 import { auth } from "../../firebase/firebase-config";
+import { DarkModeToggle } from "../botton/DarkModeToggle";
 
 export const AcmeLogo = () => {
   return (
@@ -84,7 +85,7 @@ export const NabvarH = () => {
   
 
   return (
-    <Navbar isBordered>
+    <Navbar isBordered >
       <NavbarContent justify="start">
         <NavbarBrand className="mr-4">
           <AcmeLogo />
@@ -135,6 +136,9 @@ export const NabvarH = () => {
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
+        <div className="absolute top-4 -right-60">
+        <DarkModeToggle />
+        </div>
       </NavbarContent>
       
     </Navbar>

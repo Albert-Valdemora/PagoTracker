@@ -1,8 +1,9 @@
 import { useState } from 'react'
+import { Link } from 'react-router';
 
-export const Nabvar = ({li}) => {
+export const Nabvar = ({li = []}) => {
 
-  const [nabvarV, setNabvarV] = useState(false)
+  const [nabvarV, setNabvarV] = useState(true)
 
   let openClose = () => {
     if (nabvarV === false) {
@@ -21,12 +22,12 @@ export const Nabvar = ({li}) => {
         {li.map((item, i) => (
           <div className="navbar__li-box flex items-center gap-3" key={i}>
             <i class={item[1]} style={{ paddingLeft: nabvarV === false ? 27 : 17, width: nabvarV === true ?'35px' : '43px'}}></i>
-            <li
+            <Link
               className="navbar__li"
               style={{ display: nabvarV === false ? "inline-block" : "none" }}
             >
               {item[0]}
-            </li>
+            </Link>
           </div>
         ))}
       </ul>
