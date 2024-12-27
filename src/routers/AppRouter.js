@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { PagoTrackerScreen } from "../components/screens/PagoTrackerScreen";
+// import { PagoTrackerScreen } from "../components/screens/PagoTrackerScreen";
 import { AuthRouter } from "./AuthRouter";
 import { PrivateRoute } from "./PrivateRoute";
 import { PublicRoute } from "./PublicRoute";
@@ -34,11 +34,10 @@ export const AppRouter = () => {
         />
 
         <Route
-          path="/"
+          path="/*"
           element={
             <PrivateRoute>
-              {/* <DashboardRoutes /> */}
-              <PagoTrackerScreen />
+              <DashboardRoutes />
             </PrivateRoute>
           }
         />

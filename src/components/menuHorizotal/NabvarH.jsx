@@ -15,6 +15,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { login, startLogout } from "../../actions/auth";
 import { auth } from "../../firebase/firebase-config";
 import { DarkModeToggle } from "../botton/DarkModeToggle";
+import { Link } from "react-router";
 
 export const AcmeLogo = () => {
   return (
@@ -89,7 +90,9 @@ export const NabvarH = () => {
       <NavbarContent justify="start">
         <NavbarBrand className="mr-4">
           <AcmeLogo />
+          <Link to={'/'}>
           <p className="hidden sm:block font-bold text-inherit">ACME</p>
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
