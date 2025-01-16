@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 export const Nabvar = ({navigation = []}) => {
 
-  const [nabvarV, setNabvarV] = useState(true)
+  const [nabvarV, setNabvarV] = useState(false)
 
   let openClose = () => {
     setNabvarV(!nabvarV);

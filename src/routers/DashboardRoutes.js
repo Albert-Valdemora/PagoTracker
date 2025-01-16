@@ -5,6 +5,7 @@ import { Registros } from '../components/screens/Registros'
 import { Clientes } from '../components/screens/Clientes'
 import { Nabvar } from '../components/menuVertical/Nabvar'
 import { NabvarH } from '../components/menuHorizotal/NabvarH'
+import { AgregarFecha } from '../components/screens/AgregarFecha'
 
 
 
@@ -21,7 +22,8 @@ export const DashboardRoutes = () => {
               { name: 'Sobre Nosotros', href: '/AboutUs', icon: "fa-solid fa-user-plus" },
               { name: 'Preguntas Frecuentes', href: '/FAQs', icon: "fa-solid fa-envelope" },
               { name: 'Registro', href: '/Registro', icon: "fa-solid fa-book" },
-              { name: 'Clientes', href: '/Clientes', icon: "fa-solid fa-gear" }
+              { name: 'Clientes', href: '/Clientes', icon: "fa-solid fa-gear" },
+              { name: 'Agregar fecha', href: '/Calendario', icon: "fa-solid fa-calendar" }
             ]}
           />
         </header>
@@ -32,6 +34,7 @@ export const DashboardRoutes = () => {
             <Route path="/" element={<PagoTrackerScreen />} />
             <Route path='Registro' element={<Registros />} />
             <Route path='Clientes' element={<Clientes />} />
+            <Route path='Calendario' element={<AgregarFecha />} />
           </Routes>
         </main>
       </div>
